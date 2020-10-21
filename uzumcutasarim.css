@@ -475,9 +475,6 @@ body {
    margin: 0;
 }
 .header-menu .container {
-   background-color: #3f51b5;
-   background-image: -webkit-linear-gradient(left, #3f51b5, #03a9f4);
-   background-image: linear-gradient(to right, #3f51b5, #03a9f4);
    position: relative;
    margin: 0 auto;
    padding: 0;
