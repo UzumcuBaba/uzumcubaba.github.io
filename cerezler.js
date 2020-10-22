@@ -442,7 +442,45 @@
                            }
                         },
                      };
-                  };
+                  },
+                  ipinfodb: function (e) {
+                     return {
+                        url: "//api.ipinfodb.com/v3/ip-country/?key={api_key}&format=json&callback={callback}",
+                        isScript: !0,
+                        callback: function (e, t) {
+                           try {
+                              var i = JSON.parse(t);
+                              return "ERROR" == i.statusCode ? s({ error: i.statusMessage }) : { code: i.countryCode };
+                           } catch (e) {
+                              return s({ error: "Invalid response (" + e + ")" });
+                           }
+                        },
+                     };
+                  },
+                  maxmind: function () {
+                     return {
+                        url: "//js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js",
+                        isScript: !0,
+                        callback: function (e) {
+                           window.geoip2
+                              ? geoip2.country(
+                                   function (t) {
+                                      try {
+                                         e({ code: t.country.iso_code });
+                                      } catch (t) {
+                                         e(s(t));
+                                      }
+                                   },
+                                   function (t) {
+                                      e(s(t));
+                                   }
+                                )
+                              : e(new Error("Unexpected response format. The downloaded script should have exported `geoip2` to the global scope"));
+                        },
+                     };
+                  },
+               },
+            };
             function i(i) {
                t.deepExtend((this.options = {}), e), t.isPlainObject(i) && t.deepExtend(this.options, i), (this.currentServiceIndex = -1);
             }
