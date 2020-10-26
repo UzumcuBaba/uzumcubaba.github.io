@@ -277,7 +277,7 @@ body {
    transition: color .17s;
 }
 .top-bar-social ul > li:last-child > a {
-   padding: 5px 0 0 7px;
+   padding: 0px 0 0 7px;
 }
 .top-bar-social ul > li:hover > a {
    color: #3f51b5;
@@ -707,20 +707,21 @@ body {
    outline: none;
 }
 .slide-menu-toggle {
-   display: none;
-   position: absolute;
-   line-height: 48px;
-   height: 48px;
-   width: 48px;
-   top: 0;
-   left: 0;
-   color: #fff;
-   font-size: 17px;
-   font-weight: 400;
-   text-align: left;
-   cursor: pointer;
-   z-index: 4;
-   padding: 0;
+    display: none;
+    position: absolute;
+    line-height: 48px;
+    height: 48px;
+    width: 48px;
+    top: 0;
+    left: 0;
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    z-index: 4;
+    padding: 0;
 }
 .slide-menu-toggle:before {
    content: "\f0c9";
