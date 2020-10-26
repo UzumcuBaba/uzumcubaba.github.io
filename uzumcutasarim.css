@@ -266,10 +266,15 @@ body {
    display: inline-block;
 }
 .top-bar-social ul > li > a {
+   line-height: 34px;
    display: block;
+   color: #ffffff;
+   text-decoration: none;
+   font-size: 14px;
    text-align: center;
-   padding: 5px 7px;
-   margin: 2px -7px 0 10px;
+   padding: 0 7px;
+   margin: 0 0 0 10px;
+   transition: color .17s;
 }
 .top-bar-social ul > li:last-child > a {
    padding: 5px 0 0 7px;
