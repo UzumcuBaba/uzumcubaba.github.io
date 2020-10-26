@@ -236,7 +236,7 @@ $(function (t) {
             return a.replace(a, a + "?&max-results=" + postPerPage);
          }),
          $(".avatar-image-container img").attr("src", function (t, a) {
-            return (a = (a = a.replace("/s35-c/", "/s45-c/")).replace("//img1.blogblog.com/img/blank.gif", "//4.bp.blogspot.com/-uCjYgVFIh70/VuOLn-mL7PI/AAAAAAAADUs/Kcu9wJbv790hIo83rI_s7lLW3zkLY01EA/s55-r/avatar.png"));
+            return (a = (a = a.replace("/s35-c/", "/s45-c/")).replace("//1.bp.blogspot.com/-6bajoYC0A0A/X5dUieZM-dI/AAAAAAAACBA/I6voC3Zf8Sc8vX4nqv-JRKnMkLeUMIxDQCLcBGAsYHQ/s0/blank.gif", "//4.bp.blogspot.com/-uCjYgVFIh70/VuOLn-mL7PI/AAAAAAAADUs/Kcu9wJbv790hIo83rI_s7lLW3zkLY01EA/s55-r/avatar.png"));
          }),
          $(".author-description a").each(function () {
             $(this).attr("target", "_blank");
@@ -269,7 +269,7 @@ $(function (t) {
                a.match("full-width") && t.replaceWith("<style>.item #main-wrapper{width:100%}.item #sidebar-wrapper{display:none}</style>");
          }),
          $("#main-wrapper, #sidebar-wrapper").each(function () {
-            1 == fixedSidebar && $(this).theiaStickySidebar({ additionalMarginTop: 0, additionalMarginBottom: 30 });
+            1 == fixedSidebar && $(this).theiaStickySidebar({ additionalMarginTop: 30, additionalMarginBottom: 30 });
          }),
          $(".back-top").each(function () {
             var t = $(this);
@@ -324,7 +324,7 @@ $(function (t) {
    });
 !(function (e) {
     (e.fn.lazyload = function (o) {
-        var t = { threshold: 0, failurelimit: 0, event: "scroll", effect: "show", container: window };
+        var t = { threshold: 10, failurelimit: 0, event: "scroll", effect: "show", container: window };
         o && e.extend(t, o);
         var n = this;
         return (
