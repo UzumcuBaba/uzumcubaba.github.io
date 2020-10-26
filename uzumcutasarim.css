@@ -3258,41 +3258,11 @@ ul.social-counter {
   content: "\f16d";
 }
 .social .facebookpaylasim a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wOV3GH0KXjg/XuasD0hZkuI/AAAAAAAABEw/QBdens6wpcQg7dNBPOa1LuNY7vQJ52UYwCK4BGAsYHg/s96/Facebook.webp);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 40px;
-   width: 40px;
-   position: relative;
+   content: "\f09a";
 }
 .social .twitterpaylasim a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wAELEVsqk9Y/XuasDPVTP8I/AAAAAAAABEo/PTInJMYDMzcOZO8KP0YKtvlwKqyivr4AgCK4BGAsYHg/s96/twitter.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 40px;
-   width: 40px;
-   position: relative;
-   top: 3px;
+   content: "\f099";
 }
 .social .pinterestpaylasim a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-qKnC6RPbBGQ/XuasEKQligI/AAAAAAAABE0/Cw3xyF8c9eEMjgs-CeQhY5pn66eRlcjLACK4BGAsYHg/s96/pinterest.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -2px;
-}
-.social .pinterestpaylasim a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-qKnC6RPbBGQ/XuasEKQligI/AAAAAAAABE0/Cw3xyF8c9eEMjgs-CeQhY5pn66eRlcjLACK4BGAsYHg/s96/pinterest.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -2px;
+   content: "\f0d2";
 }
