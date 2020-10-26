@@ -288,28 +288,14 @@ body {
    font-style:normal;
    font-weight:400 
 }
-.social .blogger a:before {
-   content: "";
-}
 .social .Facebook a:before {
    content: "\f09a";
 }
 .social .Twitter a:before {
    content: "\f099";
 }
-.social .rss a:before {
-}
-.social .youtube a:before {
-}
 .social .linkedin a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-eAUU3EiqnN4/Xua5Gix2WrI/AAAAAAAABFU/HTGwEkKOuF0jD9HQivP8dO-B7HAAxenCACK4BGAsYHg/s96/linkedin.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 30px;
-   width: 30px;
-   position: relative;
-   top: 7px;
+    content: "\f0e1";
 }
 .social .Instagram a:before {
    content: "\f16d";
@@ -321,33 +307,16 @@ body {
    content: "";
 }
 .social .whatsapp a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-kxaogvhRz4E/Xua7CQK04zI/AAAAAAAABF0/Ogt2npZhSZU0ooNADZ4BKW2LJxbAtAEdQCK4BGAsYHg/s96/whatsapp.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 30px;
-   width: 30px;
-   position: relative;
-   top: 7px;
+   content: "\f232";
 }
 .social .snapchat a:before {
    content: "";
 }
 .social .email a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-9BjBZNYh-io/Xua9L_fxebI/AAAAAAAABGY/LOoTji8gHyYSnziJxhH3g-TCdO8IZIjFwCK4BGAsYHg/s96/email.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 30px;
-   width: 40px;
-   position: relative;
-   top: 9px;
+   content: "\f0e0";
 }
 .social .external-link a:before {
    content: "";
-}
-.social-color .blogger a {
-   background-color: #ff5722;
 }
 .social-color .facebookpaylasim a {
    background-color: #1977f3;
@@ -364,17 +333,11 @@ body {
 .social-color .pinterestpaylasim a {
    background-color: #ca2127;
 }
-.social-color .dribbble a {
-   background-color: #ea4c89;
-}
 .social-color .linkedin a {
    background-color: #0073b1;
 }
 .social-color .twitch a {
    background-color: #6441a5;
-}
-.social-color .rss a {
-   background-color: #ffc200;
 }
 .social-color .whatsapp a {
    background-color: #349e43;
