@@ -1943,12 +1943,14 @@ ul.social-counter {
 .social-counter li a {
     display: block;
     height: 40px;
-    font-size: 22px;
-    color: #3f51b5;
+    font-size: 25px;
+    color: #ffffff;
     text-align: center;
     line-height: 40px;
-    border: 1px solid #eee;
+    border: 1px solid #fff;
     transition: color .17s;
+    border-radius: 36px;
+    background-color: #3a3da7;
 }
 .social-counter li a:hover {
    color: #000000;
