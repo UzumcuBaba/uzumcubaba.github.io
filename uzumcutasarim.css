@@ -2615,25 +2615,23 @@ ul.social-counter {
    border-radius: 120px;
 }
 .back-top:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background-color: #3f51b5;
-   opacity: 0.5;
-   transition: opacity 0.17s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3f51b5;
+    opacity: .5;
+    transition: opacity .17s ease;
 }
 .back-top:after {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-XqnTShsCW7A/XueVb4N2GEI/AAAAAAAABIo/Gu_AuU06-YAWSgUutVJceaej7xrIshxlACK4BGAsYHg/s96/yukaricikicon.png);
-   background-size: 100% 100%;
+   content: '\f077';
    position: relative;
-   display: inline-block;
-   width: 14px;
-   height: 14px;
-   top: 2px;
+   font-family: FontAwesome;
+   font-weight: 400;
+   opacity: .8;
+   transition: opacity .17s ease;
 }
 .back-top:hover:before,
 .back-top:hover:after,
