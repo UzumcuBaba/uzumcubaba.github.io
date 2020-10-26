@@ -1585,6 +1585,7 @@ ul.related-posts {
 }
 .blog-pager .page-next:after {
     content: '\f054';
+    padding: 0px 0px 0px 5px;
 }
 .blog-pager .blog-pager-newer-link,
 .blog-pager .blog-pager-older-link {
