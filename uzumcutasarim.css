@@ -315,14 +315,7 @@ body {
    content: "\f16d";
 }
 .social .pinterest a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-qKnC6RPbBGQ/XuasEKQligI/AAAAAAAABE0/Cw3xyF8c9eEMjgs-CeQhY5pn66eRlcjLACK4BGAsYHg/s96/pinterest.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -7px;
+   content: "\f0d2";
 }
 .social .twitch a:before {
    content: "";
@@ -1993,10 +1986,14 @@ ul.social-counter {
    margin-top: 0;
 }
 .social-counter li a {
-   display: block;
-   height: 36px;
-   color: #ffffff;
-   text-align: center;
+    display: block;
+    height: 40px;
+    font-size: 22px;
+    color: #3f51b5;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #eee;
+    transition: color .17s;
 }
 .social-counter li a:hover {
    color: #000000;
@@ -3263,24 +3260,10 @@ ul.social-counter {
    margin-left: 0;
 }
 .social .facebook a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wOV3GH0KXjg/XuasD0hZkuI/AAAAAAAABEw/QBdens6wpcQg7dNBPOa1LuNY7vQJ52UYwCK4BGAsYHg/s96/Facebook.webp);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -7px;
+    content: "\f09a";
 }
 .social .twitter a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wAELEVsqk9Y/XuasDPVTP8I/AAAAAAAABEo/PTInJMYDMzcOZO8KP0YKtvlwKqyivr4AgCK4BGAsYHg/s96/twitter.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -7px;
+    content: "\f099";
 }
 .social .instagram a:before {
   content: "\f16d";
