@@ -277,6 +277,12 @@ body {
 .top-bar-social ul > li:hover > a {
    color: #3f51b5;
 }
+.social a:before{
+   display:inline-block;
+   font-family:FontAwesome;
+   font-style:normal;
+   font-weight:400 
+}
 .social .blogger a:before {
    content: "";
 }
@@ -521,16 +527,6 @@ body {
    border-right: 1px solid rgb(0 0 0 / 3%);
    transition: color 0.17s ease;
 }
-#main-menu ul#main-menu-nav > li:first-child > a:before {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-Y0HPH2N5FrM/XueECCzj-YI/AAAAAAAABHo/9wz5SEmZmrcxbkcpPemFo4Gt_yfHp5jVwCK4BGAsYHg/s128/home-icon.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   width: 26px;
-   height: 26px;
-   position: relative;
-   top: 6px;
-}
 #main-menu ul > li:hover > a {
    color: #fff;
 }
@@ -676,24 +672,14 @@ body {
    transition: color 0.17s ease;
 }
 .show-search:before {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-9KoFnSH6zBA/XueEBtbmyaI/AAAAAAAABHk/5yNESS0gF1kKDb7YjEKZ5sAnxtvM8RN1gCK4BGAsYHg/s112/searchicon.png);
-   background-size: 100% 100%;
-   width: 20px;
-   height: 20px;
-   position: relative;
-   top: 3px;
-   display: inline-block;
+    font-weight: 400;
+    content: "\f002";
+    font-family: 'FontAwesome';
 }
 .hide-search:before {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-2JPKFRomLmY/XueYKdFIc0I/AAAAAAAABJI/gjYmZQRiFFgk57DXeMpxZtT4rM4Bvx5MwCK4BGAsYHg/s112/crossicon.png);
-   background-size: 100% 100%;
-   width: 16px;
-   height: 16px;
-   position: relative;
-   display: inline-block;
-   top: 3px;
+    content: "\f00d";
+    font-family: FontAwesome;
+    font-weight: 400;
 }
 .show-search:hover,
 .hide-search:hover {
@@ -753,12 +739,7 @@ body {
    padding: 0;
 }
 .slide-menu-toggle:before {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-7nj2YuMTiJI/XueRPYzfOlI/AAAAAAAABII/ywA85wnylK40Nis4DXB20Mqqw_bk_xlrwCK4BGAsYHg/s128/mobilemenuicon.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   width: 24px;
-   height: 15px;
+   content: "\f0c9";
 }
 .mobile-menu {
    display: none;
