@@ -1233,14 +1233,13 @@ a.read-more:hover {
    display: inline-block;
 }
 #breadcrumb .delimiter:after {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-6isay80Bhsk/Xueai8obvwI/AAAAAAAABJs/iSkzybKzIdYQaVSGprzHv0xJk8gdCSZ1ACK4BGAsYHg/s64/breadcrumbicon.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   width: 8px;
-   height: 8px;
-   position: relative;
-   margin: 0px 4px;
+    content: '\f054';
+    font-family: FontAwesome;
+    font-size: 8px;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+    margin: 0 3px;
 }
 .item-post h1.post-title {
    color: #000000;
@@ -1608,16 +1607,16 @@ ul.related-posts {
    border-color: #3f51b5;
 }
 .blog-pager .page-prev:before,
-.blog-pager .page-next:before {
+.blog-pager .page-next:after {
    font-family: FontAwesome;
-    font-size: 11px;
-    font-weight: 400;
+   font-size: 11px;
+   font-weight: 400;
 }
 .blog-pager .page-prev:before {
-      content: '\f053';
+    content: '\f053';
 }
 .blog-pager .page-next:after {
-      content: '\f054';
+    content: '\f054';
 }
 .blog-pager .blog-pager-newer-link,
 .blog-pager .blog-pager-older-link {
