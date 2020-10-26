@@ -322,107 +322,76 @@ $(function (t) {
                : $(this).addClass("comments-system-default").show();
          });
    });
-(function (a) {
-    a.fn.lazyload = function (b) {
-        var c = { threshold: 0, failurelimit: 0, event: "scroll", effect: "show", container: window };
-        if (b) {
-            a.extend(c, b);
-        }
-        var d = this;
-        if ("scroll" == c.event) {
-            a(c.container).bind("scroll", function (b) {
-                var e = 0;
-                d.each(function () {
-                    if (a.abovethetop(this, c) || a.leftofbegin(this, c)) {
-                    } else if (!a.belowthefold(this, c) && !a.rightoffold(this, c)) {
-                        a(this).trigger("appear");
-                    } else {
-                        if (e++ > c.failurelimit) {
-                            return false;
-                        }
-                    }
-                });
-                var f = a.grep(d, function (a) {
-                    return !a.loaded;
-                });
-                d = a(f);
-            });
-        }
-        this.each(function () {
-            var b = this;
-            if (undefined == a(b).attr("original")) {
-                a(b).attr("original", a(b).attr("src"));
-            }
-            if ("scroll" != c.event || undefined == a(b).attr("src") || c.placeholder == a(b).attr("src") || a.abovethetop(b, c) || a.leftofbegin(b, c) || a.belowthefold(b, c) || a.rightoffold(b, c)) {
-                if (c.placeholder) {
-                    a(b).attr("src", c.placeholder);
-                } else {
-                    a(b).removeAttr("src");
-                }
-                b.loaded = false;
-            } else {
-                b.loaded = true;
-            }
-            a(b).one("appear", function () {
-                if (!this.loaded) {
-                    a("<img />")
-                        .bind("load", function () {
-                            a(b).hide().attr("src", a(b).attr("original"))[c.effect](c.effectspeed);
-                            b.loaded = true;
-                        })
-                        .attr("src", a(b).attr("original"));
-                }
-            });
-            if ("scroll" != c.event) {
-                a(b).bind(c.event, function (c) {
-                    if (!b.loaded) {
-                        a(b).trigger("appear");
-                    }
-                });
-            }
+!(function (e) {
+    (e.fn.lazyload = function (o) {
+        var t = { threshold: 0, failurelimit: 0, event: "scroll", effect: "show", container: window };
+        o && e.extend(t, o);
+        var n = this;
+        return (
+            "scroll" == t.event &&
+                e(t.container).bind("scroll", function (o) {
+                    var i = 0;
+                    n.each(function () {
+                        if (e.abovethetop(this, t) || e.leftofbegin(this, t));
+                        else if (e.belowthefold(this, t) || e.rightoffold(this, t)) {
+                            if (i++ > t.failurelimit) return !1;
+                        } else e(this).trigger("appear");
+                    });
+                    var r = e.grep(n, function (e) {
+                        return !e.loaded;
+                    });
+                    n = e(r);
+                }),
+            this.each(function () {
+                var o = this;
+                null == e(o).attr("original") && e(o).attr("original", e(o).attr("src")),
+                    "scroll" != t.event || null == e(o).attr("src") || t.placeholder == e(o).attr("src") || e.abovethetop(o, t) || e.leftofbegin(o, t) || e.belowthefold(o, t) || e.rightoffold(o, t)
+                        ? (t.placeholder ? e(o).attr("src", t.placeholder) : e(o).removeAttr("src"), (o.loaded = !1))
+                        : (o.loaded = !0),
+                    e(o).one("appear", function () {
+                        this.loaded ||
+                            e("<img />")
+                                .bind("load", function () {
+                                    e(o).hide().attr("src", e(o).attr("original"))[t.effect](t.effectspeed), (o.loaded = !0);
+                                })
+                                .attr("src", e(o).attr("original"));
+                    }),
+                    "scroll" != t.event &&
+                        e(o).bind(t.event, function (t) {
+                            o.loaded || e(o).trigger("appear");
+                        });
+            }),
+            e(t.container).trigger(t.event),
+            this
+        );
+    }),
+        (e.belowthefold = function (o, t) {
+            if (void 0 === t.container || t.container === window) var n = e(window).height() + e(window).scrollTop();
+            else n = e(t.container).offset().top + e(t.container).height();
+            return n <= e(o).offset().top - t.threshold;
+        }),
+        (e.rightoffold = function (o, t) {
+            if (void 0 === t.container || t.container === window) var n = e(window).width() + e(window).scrollLeft();
+            else n = e(t.container).offset().left + e(t.container).width();
+            return n <= e(o).offset().left - t.threshold;
+        }),
+        (e.abovethetop = function (o, t) {
+            if (void 0 === t.container || t.container === window) var n = e(window).scrollTop();
+            else n = e(t.container).offset().top;
+            return n >= e(o).offset().top + t.threshold + e(o).height();
+        }),
+        (e.leftofbegin = function (o, t) {
+            if (void 0 === t.container || t.container === window) var n = e(window).scrollLeft();
+            else n = e(t.container).offset().left;
+            return n >= e(o).offset().left + t.threshold + e(o).width();
+        }),
+        e.extend(e.expr[":"], {
+            "below-the-fold": "$.belowthefold(a, {threshold : 0, container: window})",
+            "above-the-fold": "!$.belowthefold(a, {threshold : 0, container: window})",
+            "right-of-fold": "$.rightoffold(a, {threshold : 0, container: window})",
+            "left-of-fold": "!$.rightoffold(a, {threshold : 0, container: window})",
         });
-        a(c.container).trigger(c.event);
-        return this;
-    };
-    a.belowthefold = function (b, c) {
-        if (c.container === undefined || c.container === window) {
-            var d = a(window).height() + a(window).scrollTop();
-        } else {
-            var d = a(c.container).offset().top + a(c.container).height();
-        }
-        return d <= a(b).offset().top - c.threshold;
-    };
-    a.rightoffold = function (b, c) {
-        if (c.container === undefined || c.container === window) {
-            var d = a(window).width() + a(window).scrollLeft();
-        } else {
-            var d = a(c.container).offset().left + a(c.container).width();
-        }
-        return d <= a(b).offset().left - c.threshold;
-    };
-    a.abovethetop = function (b, c) {
-        if (c.container === undefined || c.container === window) {
-            var d = a(window).scrollTop();
-        } else {
-            var d = a(c.container).offset().top;
-        }
-        return d >= a(b).offset().top + c.threshold + a(b).height();
-    };
-    a.leftofbegin = function (b, c) {
-        if (c.container === undefined || c.container === window) {
-            var d = a(window).scrollLeft();
-        } else {
-            var d = a(c.container).offset().left;
-        }
-        return d >= a(b).offset().left + c.threshold + a(b).width();
-    };
-    a.extend(a.expr[":"], {
-        "below-the-fold": "$.belowthefold(a, {threshold : 0, container: window})",
-        "above-the-fold": "!$.belowthefold(a, {threshold : 0, container: window})",
-        "right-of-fold": "$.rightoffold(a, {threshold : 0, container: window})",
-        "left-of-fold": "!$.rightoffold(a, {threshold : 0, container: window})",
+})(jQuery),
+    $(function () {
+        $("img").lazyload({ placeholder: "//1.bp.blogspot.com/-6bajoYC0A0A/X5dUieZM-dI/AAAAAAAACBA/I6voC3Zf8Sc8vX4nqv-JRKnMkLeUMIxDQCLcBGAsYHQ/s0/blank.gif", effect: "fadeIn", threshold: "-50" });
     });
-})(jQuery);
-$(function () {
-    $("img").lazyload({ placeholder: "//1.bp.blogspot.com/-6bajoYC0A0A/X5dUieZM-dI/AAAAAAAACBA/I6voC3Zf8Sc8vX4nqv-JRKnMkLeUMIxDQCLcBGAsYHQ/s0/blank.gif", effect: "fadeIn", threshold: "-50" });
-});
