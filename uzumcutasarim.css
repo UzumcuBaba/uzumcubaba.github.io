@@ -287,24 +287,10 @@ body {
    content: "";
 }
 .social .Facebook a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wOV3GH0KXjg/XuasD0hZkuI/AAAAAAAABEw/QBdens6wpcQg7dNBPOa1LuNY7vQJ52UYwCK4BGAsYHg/s96/Facebook.webp);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 25px;
-   width: 25px;
-   position: relative;
-   top: -2px;
+   content: "\f09a";
 }
 .social .Twitter a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-wAELEVsqk9Y/XuasDPVTP8I/AAAAAAAABEo/PTInJMYDMzcOZO8KP0YKtvlwKqyivr4AgCK4BGAsYHg/s96/twitter.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 25px;
-   width: 25px;
-   position: relative;
-   top: -2px;
+   content: "\f099";
 }
 .social .rss a:before {
 }
@@ -321,14 +307,7 @@ body {
    top: 7px;
 }
 .social .Instagram a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-KdO5QBS_qrs/XuasDs0oQ_I/AAAAAAAABEs/TfoClTyKWEYq_2V3vAjZ_gyOzl9aDnAfQCK4BGAsYHg/s96/instagram.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 25px;
-   width: 25px;
-   position: relative;
-   top: -2px;
+   content: "\f16d";
 }
 .social .pinterest a:before {
    content: url("");
@@ -3298,14 +3277,7 @@ ul.social-counter {
    top: -7px;
 }
 .social .instagram a:before {
-   content: url("");
-   background-image: url(https://1.bp.blogspot.com/-KdO5QBS_qrs/XuasDs0oQ_I/AAAAAAAABEs/TfoClTyKWEYq_2V3vAjZ_gyOzl9aDnAfQCK4BGAsYHg/s96/instagram.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   height: 50px;
-   width: 50px;
-   position: relative;
-   top: -7px;
+  content: "\f16d";
 }
 .social .facebookpaylasim a:before {
    content: url("");
