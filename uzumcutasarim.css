@@ -1609,28 +1609,15 @@ ul.related-posts {
 }
 .blog-pager .page-prev:before,
 .blog-pager .page-next:before {
-   font-size: 11px;
+   font-family: FontAwesome;
+    font-size: 11px;
+    font-weight: 400;
 }
 .blog-pager .page-prev:before {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-6isay80Bhsk/Xueai8obvwI/AAAAAAAABJs/iSkzybKzIdYQaVSGprzHv0xJk8gdCSZ1ACK4BGAsYHg/s96/breadcrumbicon.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   width: 8px;
-   height: 8px;
-   position: relative;
-   margin: 0px 4px;
-   transform: rotate(180deg);
+      content: '\f053';
 }
 .blog-pager .page-next:after {
-   content: "";
-   background-image: url(https://1.bp.blogspot.com/-6isay80Bhsk/Xueai8obvwI/AAAAAAAABJs/iSkzybKzIdYQaVSGprzHv0xJk8gdCSZ1ACK4BGAsYHg/s96/breadcrumbicon.png);
-   background-size: 100% 100%;
-   display: inline-block;
-   width: 8px;
-   height: 8px;
-   position: relative;
-   margin: 0px 4px;
+      content: '\f054';
 }
 .blog-pager .blog-pager-newer-link,
 .blog-pager .blog-pager-older-link {
