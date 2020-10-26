@@ -2613,12 +2613,12 @@ ul.social-counter {
     transition: opacity .17s ease;
 }
 .back-top:after {
-   content: '\f077';
-   position: relative;
-   font-family: FontAwesome;
-   font-weight: 400;
-   opacity: .8;
-   transition: opacity .17s ease;
+    content: '\f077';
+    position: relative;
+    font-family: FontAwesome;
+    font-weight: 400;
+    opacity: .8;
+    transition: opacity .17s ease;
 }
 .back-top:hover:before,
 .back-top:hover:after,
