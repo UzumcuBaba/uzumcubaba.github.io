@@ -269,7 +269,7 @@ $(function (t) {
                a.match("full-width") && t.replaceWith("<style>.item #main-wrapper{width:100%}.item #sidebar-wrapper{display:none}</style>");
          }),
          $("#main-wrapper, #sidebar-wrapper").each(function () {
-            1 == fixedSidebar && $(this).theiaStickySidebar({ additionalMarginTop: 30, additionalMarginBottom: 30 });
+            1 == fixedSidebar && $(this).theiaStickySidebar({ additionalMarginTop: 0, additionalMarginBottom: 30 });
          }),
          $(".back-top").each(function () {
             var t = $(this);
