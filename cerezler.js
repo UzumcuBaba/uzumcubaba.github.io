@@ -545,9 +545,5 @@
                }),
                i
             );
-         })()),
-         (e.utils = t),
-         (e.hasInitialised = !0),
-         (window.cookieconsent = e);
    }
 })(window.cookieconsent || {});
