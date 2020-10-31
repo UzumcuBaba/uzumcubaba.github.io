@@ -167,3 +167,4 @@ function findPostDate(a) {
     }
     location.href = d
 }
+pageCurrentBlogger();
