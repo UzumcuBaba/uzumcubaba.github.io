@@ -7,8 +7,6 @@ var currentPageNo;
 var postLabel;
 var locationUrl = location.href;
 var home_page = "/";
-pageCurrentBlogger();
-
 function startPagination(a) {
     var b = '';
     pageNumber = parseInt(numOfPages / 2);
