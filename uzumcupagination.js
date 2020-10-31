@@ -1,1 +1,169 @@
-var noPage,currentPage,currentPageNo,postLabel,postResults=postPerPage,numOfPages=2,pageOf=["Page","of"],locationrl=location.href,home_page="/";function startPagination(e){var a="";pageNumber=parseInt(numOfPages/2),pageNumber==numOfPages-pageNumber&&(numOfPages=2*pageNumber+1),pageStart=currentPageNo-pageNumber,pageStart<1&&(pageStart=1),lastPageNo=parseInt(e/postResults)+1,lastPageNo-1==e/postResults&&(lastPageNo-=1),pageEnd=pageStart+numOfPages-1,pageEnd>lastPageNo&&(pageEnd=lastPageNo),a+='<span class="page-of">'+pageOf[0]+" "+currentPageNo+" "+pageOf[1]+" "+lastPageNo+"</span>";var t=parseInt(currentPageNo)-1;currentPageNo>1&&(a+=2==currentPageNo?"page"==currentPage?'<a class="page-num page-prev" href="'+home_page+'"></a>':'<a class="page-num page-prev" href="/search/label/'+postLabel+"?&max-results="+postResults+'"></a>':"page"==currentPage?'<a class="page-num page-prev" href="#" onclick="getPage('+t+');return false">Önceki Sayfa</a>':'<a class="page-num page-prev" href="#" onclick="getLabelPage('+t+');return false">Önceki Sayfa</a>'),pageStart>1&&(a+="page"==currentPage?'<a class="page-num" href="'+home_page+'">1</a>':'<a class="page-num" href="/search/label/'+postLabel+"?&max-results="+postResults+'">1</a>'),pageStart>2&&(a+='<span class="page-num page-dots">...</span>');for(var s=pageStart;s<=pageEnd;s++)a+=currentPageNo==s?'<span class="page-num page-active">'+s+"</span>":1==s?"page"==currentPage?'<a class="page-num" href="'+home_page+'">1</a>':'<a class="page-num" href="/search/label/'+postLabel+"?&max-results="+postResults+'">1</a>':"page"==currentPage?'<a class="page-num" href="#" onclick="getPage('+s+');return false">'+s+"</a>":'<a class="page-num" href="#" onclick="getLabelPage('+s+');return false">'+s+"</a>";pageEnd<lastPageNo-1&&(a+='<span class="page-num page-dots">...</span>'),pageEnd<lastPageNo&&(a+="page"==currentPage?'<a class="page-num" href="#" onclick="getPage('+lastPageNo+');return false">'+lastPageNo+"</a>":'<a class="page-num" href="#" onclick="getLabelPage('+lastPageNo+');return false">'+lastPageNo+"</a>");var r=parseInt(currentPageNo)+1;currentPageNo<lastPageNo&&(a+="page"==currentPage?'<a class="page-num page-next" href="#" onclick="getPage('+r+');return false">Sonraki Sayfa</a>':'<a class="page-num page-next" href="#" onclick="getLabelPage('+r+');return false">Sonraki Sayfa</a>'),a+="";for(var n=document.getElementsByName("pageArea"),g=document.getElementById("blog-pager"),l=0;l<n.length;l++)n[l].innerHTML=a;n&&n.length>0&&(a=""),g&&(g.innerHTML=a)}function dataFeed(e){var a=e.feed;startPagination(parseInt(a.openSearch$totalResults.$t,10))}function pageCurrentBlogger(){var e=locationrl;if(-1!=e.indexOf("/search/label/")&&(postLabel=-1!=e.indexOf("?updated-max")?e.substring(e.indexOf("/search/label/")+14,e.indexOf("?updated-max")):e.substring(e.indexOf("/search/label/")+14,e.indexOf("?&max"))),-1==e.indexOf("?q=")&&-1==e.indexOf(".html")){const a=document.createElement("script");a.async=!1,currentPageNo=-1!=locationrl.indexOf("#PageNo=")?locationrl.substring(locationrl.indexOf("#PageNo=")+8,locationrl.length):1,-1==e.indexOf("/search/label/")?(currentPage="page",a.src=`${home_page}feeds/posts/summary?max-results=1&alt=json-in-script&callback=dataFeed`):(currentPage="label",-1==e.indexOf("&max-results=")&&(postResults=20),a.src=`${home_page}feeds/posts/summary/-/${postLabel}?alt=json-in-script&callback=dataFeed&max-results=1`),document.head.appendChild(a)}}function getPage(e){jsonstart=(e-1)*postResults,noPage=e;var a=document.getElementsByTagName("head")[0],t=document.createElement("script");t.type="text/javascript",t.setAttribute("src",home_page+"feeds/posts/summary?start-index="+jsonstart+"&max-results=1&alt=json-in-script&callback=findPostDate"),a.appendChild(t)}function getLabelPage(e){jsonstart=(e-1)*postResults,noPage=e;var a=document.getElementsByTagName("head")[0],t=document.createElement("script");t.type="text/javascript",t.setAttribute("src",home_page+"feeds/posts/summary/-/"+postLabel+"?start-index="+jsonstart+"&max-results=1&alt=json-in-script&callback=findPostDate"),a.appendChild(t)}function findPostDate(e){post=e.feed.entry[0];var a=post.published.$t.substring(0,19)+post.published.$t.substring(23,29),t=encodeURIComponent(a);if("page"==currentPage)var s="/search?updated-max="+t+"&max-results="+postResults+"#PageNo="+noPage;else s="/search/label/"+postLabel+"?updated-max="+t+"&max-results="+postResults+"#PageNo="+noPage;location.href=s}pageCurrentBlogger();
+var postResults = postPerPage;
+var numOfPages = 2;
+var pageOf = ["Page", "of"];
+var noPage;
+var currentPage;
+var currentPageNo;
+var postLabel;
+var locationUrl = location.href;
+var home_page = "/";
+pageCurrentBlogger();
+
+function startPagination(a) {
+    var b = '';
+    pageNumber = parseInt(numOfPages / 2);
+    if (pageNumber == numOfPages - pageNumber) {
+        numOfPages = pageNumber * 2 + 1
+    }
+    pageStart = currentPageNo - pageNumber;
+    if (pageStart < 1) pageStart = 1;
+    lastPageNo = parseInt(a / postResults) + 1;
+    if (lastPageNo - 1 == a / postResults) lastPageNo = lastPageNo - 1;
+    pageEnd = pageStart + numOfPages - 1;
+    if (pageEnd > lastPageNo) pageEnd = lastPageNo;
+    b += '<span class="page-of">' + pageOf[0] + ' ' + currentPageNo + ' ' + pageOf[1] + ' ' + lastPageNo + '</span>';
+    var c = parseInt(currentPageNo) - 1;
+    if (currentPageNo > 1) {
+        if (currentPageNo == 2) {
+            if (currentPage == 'page') {
+                b += '<a class="page-num page-prev" href="' + home_page + '"></a>'
+            } else {
+                b += '<a class="page-num page-prev" href="/search/label/' + postLabel + '?&max-results=' + postResults + '"></a>'
+            }
+        } else {
+            if (currentPage == 'page') {
+                b += '<a class="page-num page-prev" href="#" onclick="getPage(' + c + ');return false"></a>'
+            } else {
+                b += '<a class="page-num page-prev" href="#" onclick="getLabelPage(' + c + ');return false"></a>'
+            }
+        }
+    }
+    if (pageStart > 1) {
+        if (currentPage == "page") {
+            b += '<a class="page-num" href="' + home_page + '">1</a>'
+        } else {
+            b += '<a class="page-num" href="/search/label/' + postLabel + '?&max-results=' + postResults + '">1</a>'
+        }
+    }
+    if (pageStart > 2) {
+        b += '<span class="page-num page-dots">...</span>'
+    }
+    for (var d = pageStart; d <= pageEnd; d++) {
+        if (currentPageNo == d) {
+            b += '<span class="page-num page-active">' + d + '</span>'
+        } else if (d == 1) {
+            if (currentPage == 'page') {
+                b += '<a class="page-num" href="' + home_page + '">1</a>'
+            } else {
+                b += '<a class="page-num" href="/search/label/' + postLabel + '?&max-results=' + postResults + '">1</a>'
+            }
+        } else {
+            if (currentPage == 'page') {
+                b += '<a class="page-num" href="#" onclick="getPage(' + d + ');return false">' + d + '</a>'
+            } else {
+                b += '<a class="page-num" href="#" onclick="getLabelPage(' + d + ');return false">' + d + '</a>'
+            }
+        }
+    }
+    if (pageEnd < lastPageNo - 1) {
+        b += '<span class="page-num page-dots">...</span>'
+    }
+    if (pageEnd < lastPageNo) {
+        if (currentPage == "page") {
+            b += '<a class="page-num" href="#" onclick="getPage(' + lastPageNo + ');return false">' + lastPageNo + '</a>'
+        } else {
+            b += '<a class="page-num" href="#" onclick="getLabelPage(' + lastPageNo + ');return false">' + lastPageNo + '</a>'
+        }
+    }
+    var e = parseInt(currentPageNo) + 1;
+    if (currentPageNo < lastPageNo) {
+        if (currentPage == 'page') {
+            b += '<a class="page-num page-next" href="#" onclick="getPage(' + e + ');return false"></a>'
+        } else {
+            b += '<a class="page-num page-next" href="#" onclick="getLabelPage(' + e + ');return false"></a>'
+        }
+    }
+    b += '';
+    var f = document.getElementsByName('pageArea');
+    var g = document.getElementById('blog-pager');
+    for (var p = 0; p < f.length; p++) {
+        f[p].innerHTML = b
+    }
+    if (f && f.length > 0) {
+        b = ''
+    }
+    if (g) {
+        g.innerHTML = b
+    }
+}
+
+function dataFeed(a) {
+    var b = a.feed;
+    var c = parseInt(b.openSearch$totalResults.$t, 10);
+    startPagination(c)
+}
+
+function pageCurrentBlogger() {
+    var a = locationUrl;
+    if (a.indexOf('/search/label/') != -1) {
+        if (a.indexOf('?updated-max') != -1) {
+            postLabel = a.substring(a.indexOf('/search/label/') + 14, a.indexOf('?updated-max'))
+        } else {
+            postLabel = a.substring(a.indexOf('/search/label/') + 14, a.indexOf('?&max'))
+        }
+    }
+    if (a.indexOf('?q=') == -1 && a.indexOf('.html') == -1) {
+        if (a.indexOf('/search/label/') == -1) {
+            currentPage = 'page';
+            if (locationUrl.indexOf('#PageNo=') != -1) {
+                currentPageNo = locationUrl.substring(locationUrl.indexOf('#PageNo=') + 8, locationUrl.length)
+            } else {
+                currentPageNo = 1
+            }
+            document.write('<script src=\'' + home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=dataFeed\'><\/script>')
+        } else {
+            currentPage = 'label';
+            if (a.indexOf('&max-results=') == -1) {
+                postResults = 20
+            }
+            if (locationUrl.indexOf('#PageNo=') != -1) {
+                currentPageNo = locationUrl.substring(locationUrl.indexOf('#PageNo=') + 8, locationUrl.length)
+            } else {
+                currentPageNo = 1
+            }
+            document.write('<script src="' + home_page + 'feeds/posts/summary/-/' + postLabel + '?alt=json-in-script&callback=dataFeed&max-results=1" ><\/script>')
+        }
+    }
+}
+
+function getPage(a) {
+    jsonstart = (a - 1) * postResults;
+    noPage = a;
+    var b = document.getElementsByTagName('head')[0];
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.setAttribute('src', home_page + 'feeds/posts/summary?start-index=' + jsonstart + '&max-results=1&alt=json-in-script&callback=findPostDate');
+    b.appendChild(c)
+}
+
+function getLabelPage(a) {
+    jsonstart = (a - 1) * postResults;
+    noPage = a;
+    var b = document.getElementsByTagName('head')[0];
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.setAttribute('src', home_page + 'feeds/posts/summary/-/' + postLabel + '?start-index=' + jsonstart + '&max-results=1&alt=json-in-script&callback=findPostDate');
+    b.appendChild(c)
+}
+
+function findPostDate(a) {
+    post = a.feed.entry[0];
+    var b = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29);
+    var c = encodeURIComponent(b);
+    if (currentPage == 'page') {
+        var d = '/search?updated-max=' + c + '&max-results=' + postResults + '#PageNo=' + noPage
+    } else {
+        var d = '/search/label/' + postLabel + '?updated-max=' + c + '&max-results=' + postResults + '#PageNo=' + noPage
+    }
+    location.href = d
+}
