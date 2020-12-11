@@ -41,3 +41,8 @@
 .social-color .share a,.social-color-hover .share a:hover{color:#383838}
 .social-color .email a,.social-color-hover .email a:hover{color:#888}
 .social-color .external-link a,.social-color-hover .external-link a:hover{color:#3949a3}
+.social-mobile{position:relative;float:left;width:100%;margin:0}
+.social-mobile ul{display:block;text-align:center;padding:20px;margin:0}
+.social-mobile ul li{display:inline-block;margin:0 5px}
+.social-mobile ul li a{display:block;font-size:15px;color:#ffffff;padding:0 5px}
+.social-mobile ul li a:hover{color:#3f51b5}
