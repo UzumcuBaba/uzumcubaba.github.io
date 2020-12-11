@@ -55,3 +55,7 @@
 .sidebar .social-icons li a span{float:left;width:100%;background-color:rgba(0,0,0,0.05);font-size:13px;font-weight:600;padding:5px 0}
 .main-oswald .sidebar .social-icons li a span{font-weight:400}
 .sidebar .social-icons li a:hover{opacity:.85}
+.about-section ul.social-footer{float:right}
+.about-section .social-footer li{float:left;margin:0 0 0 10px}
+.about-section .social-footer li a{display:block;width:34px;height:34px;background-color:rgba(155,155,155,0.1);font-size:15px;color:#f2f2f2;text-align:center;line-height:34px;box-sizing:border-box;border:0;border-radius:4px}
+.about-section .social-footer li a:hover{color:#fff}
