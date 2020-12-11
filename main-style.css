@@ -62,3 +62,8 @@
 #navbar-social{display:none}
 #about-section .LinkList .widget-content,.about-section ul.social-footer{float:left;width:100%;text-align:center;margin:0}
 .about-section .social-footer li,.rtl .about-section .social-footer li{float:none;display:inline-block;margin:0 5px}
+#navbar-social{position:relative;float:right;height:40px;margin:0}
+#navbar-social .widget > .widget-title{display:none}
+.navbar-social ul li{float:left;height:40px;line-height:40px;margin:0 0 0 18px}
+.navbar-social ul li a{display:block;font-size:14px;color:#525252}
+.navbar-social ul li a:hover{color:#3f51b5}
