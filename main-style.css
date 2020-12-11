@@ -59,3 +59,6 @@
 .about-section .social-footer li{float:left;margin:0 0 0 10px}
 .about-section .social-footer li a{display:block;width:34px;height:34px;background-color:rgba(155,155,155,0.1);font-size:15px;color:#f2f2f2;text-align:center;line-height:34px;box-sizing:border-box;border:0;border-radius:4px}
 .about-section .social-footer li a:hover{color:#fff}
+#navbar-social{display:none}
+#about-section .LinkList .widget-content,.about-section ul.social-footer{float:left;width:100%;text-align:center;margin:0}
+.about-section .social-footer li,.rtl .about-section .social-footer li{float:none;display:inline-block;margin:0 5px}
