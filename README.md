@@ -1,2 +1,1 @@
-# uzumcubaba.github.io
-Üzümcü Baba
+https://uzummcubaba.blogspot.com/
