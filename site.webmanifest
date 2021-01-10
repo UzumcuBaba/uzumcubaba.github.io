@@ -1,8 +1,20 @@
 {
-  "name": "Üzümcü Baba",
-  "short_name": "Üzümcü Baba",
-  "lang": "tr-TR",
-  "start_url": "https://uzummcubaba.blogspot.com",
-  "display": "standalone",
-  "theme_color": "#3f51b5"
+    "name": "Üzümcü Baba",
+    "short_name": "Üzümcü Baba",
+    "icons": [
+        {
+            "src": "https://uzumcubaba.github.io/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://uzumcubaba.github.io/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "https://uzummcubaba.blogspot.com/",
+    "display": "standalone"
 }
