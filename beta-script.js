@@ -649,14 +649,11 @@ $("#main-menu").menuuzumcu(), $("#main-menu .widget").addClass("show-menu"), $("
         a < $("#footer-wrapper").offset().top - r && (a > s ? e.addClass("is-fixed") : a <= 0 && e.removeClass("is-fixed"), a > t ? e.removeClass("show") : e.addClass("show"), t = $(document).scrollTop())
       })
   }), $("#main-wrapper,#sidebar-wrapper").each(function() {
-    if (1 == fixedSidebar) {
-      if (1 == fixedMenu) var e = 90;
-      else e = 30;
+      var e = 90;
       $(this).theiaStickySidebar({
         additionalMarginTop: e,
         additionalMarginBottom: 30
       })
-    }
   }), $(".back-top").each(function() {
     var e = $(this);
     $(window).on("scroll", function() {
