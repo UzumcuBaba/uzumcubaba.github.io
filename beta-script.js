@@ -520,15 +520,6 @@ function getAjax(e, t, a, r, s) {
   }
 }
 
-function ajaxFeatured(e, t, a, r, s, o) {
-  if (s.match("getfeatured")) {
-    if ("featured" == t) return getAjax(e, t, a, r, o);
-    e.html(beforeLoader()).parent().addClass("show-uzumcu"), setTimeout(function() {
-      e.html(msgError())
-    }, 500)
-  }
-}
-
 function ajaxRelated(e, t, a, r, s) {
   if (s.match("getrelated")) return getAjax(e, t, a, r)
 }
