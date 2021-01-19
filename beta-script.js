@@ -486,9 +486,6 @@ function getAjax(e, t, a, r, s) {
         success: function(a) {
           var r = "";
           switch (t) {
-            case "featured":
-              r = '<div class="featured-posts">';
-              break;
             case "related":
               r = '<div class="related-posts">'
           }
