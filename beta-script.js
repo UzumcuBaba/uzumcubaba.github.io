@@ -581,12 +581,6 @@ $("#main-menu").menuuzumcu(), $("#main-menu .widget").addClass("show-menu"), $("
     t = e.text().trim(),
     a = e.attr("href");
   e.replaceWith('<li class="' + t + '"><a href="' + a + '" title="' + t + '" target="_blank"/></li>'), $(".author-description").append($(".author-description span li")), $(".author-description").addClass("show-icons")
-}), $("#featured .HTML .widget-content").each(function(e, t) {
-  var a = $(this),
-    r = a.text().trim(),
-    s = r.toLowerCase(),
-    o = r.split("$");
-  ajaxFeatured(a, "featured", 3, null != o[1] ? regxuzumcu(o[1]) : "", s, null != o[2] ? regxuzumcu(o[2]) : "")
 }), $(".related-content").each(function() {
   var e = $(this),
     t = e.find(".related-tag").attr("data-label");
