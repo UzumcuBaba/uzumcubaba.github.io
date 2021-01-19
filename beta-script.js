@@ -372,7 +372,7 @@ function msgError() {
 }
 
 function msgServerError() {
-  return '<div class="no-posts error-503"><h2>Haberler yüklenirken hata oluştu! Blogger sunucularına erişim sıkıntısı oluşmuş olabilir. Daha sonra tekrar ziyaret edin.</h2></div>'
+  return '<div class="no-posts error-503"><h2>Haberler yüklenirken hata oluştu! Daha sonra tekrar ziyaret edin.</h2></div>'
 }
 
 function beforeLoader() {
@@ -455,13 +455,6 @@ function getPostLabel(e, t) {
   return a
 }
 
-function getCustomStyle(e, t, a) {
-  if ("" != a) {
-    if ("featured" == e) var r = ".id-" + e + "-" + t + " .entry-category{background-color:" + a + ";color:#fff}.id-" + e + "-" + t + " .loader:after{border-color:" + a + ";border-right-color:rgba(155,155,155,0.2)}"
-  } else r = "";
-  return r
-}
-
 function getAjax(e, t, a, r, s) {
   switch (t) {
     case "featured":
@@ -476,9 +469,6 @@ function getAjax(e, t, a, r, s) {
         beforeSend: function(a) {
           var o = getCustomStyle(t, r, s);
           switch (t) {
-            case "featured":
-              $("#page-skin-2").prepend(o), e.html(beforeLoader()).parent().addClass("id-" + t + "-" + r + " show-uzumcu");
-              break;
             case "related":
               e.html(beforeLoader()).parent().addClass("show-uzumcu")
           }
@@ -486,9 +476,6 @@ function getAjax(e, t, a, r, s) {
         success: function(a) {
           var r = "";
           switch (t) {
-            case "featured":
-              r = '<div class="featured-posts">';
-              break;
             case "related":
               r = '<div class="related-posts">'
           }
@@ -502,15 +489,6 @@ function getAjax(e, t, a, r, s) {
                 f = getPostLabel(i, o),
                 m = "";
               switch (t) {
-                case "featured":
-                  switch (o) {
-                    case 0:
-                      m += '<article class="featured-item post item-' + o + '"><div class="featured-item-inner"><a class="entry-image-link before-mask" href="' + n + '"><span class="entry-thumb" data-image="' + c + '"/></a>' + f + '<div class="entry-header entry-info"><h2 class="entry-title"><a href="' + n + '">' + l + "</a></h2>" + d[0] + '</div></div></article><div class="featured-scroll">';
-                      break;
-                    default:
-                      m += '<article class="featured-item post item-' + o + '"><div class="featured-item-inner"><a class="entry-image-link before-mask" href="' + n + '"><span class="entry-thumb" data-image="' + c + '"/></a>' + f + '<div class="entry-header entry-info"><h2 class="entry-title"><a href="' + n + '">' + l + "</a></h2>" + d[1] + "</div></div></article>"
-                  }
-                  break;
                 case "related":
                   m += '<article class="related-item post item-' + o + '"><div class="entry-image"><a class="entry-image-link" href="' + n + '"><span class="entry-thumb" data-image="' + c + '"/></a></div><div class="entry-header"><h2 class="entry-title"><a href="' + n + '">' + l + "</a></h2>" + d[1] + "</div></article>"
               }
@@ -529,15 +507,6 @@ function getAjax(e, t, a, r, s) {
           e.html(msgServerError())
         }
       })
-  }
-}
-
-function ajaxFeatured(e, t, a, r, s, o) {
-  if (s.match("getfeatured")) {
-    if ("featured" == t) return getAjax(e, t, a, r, o);
-    e.html(beforeLoader()).parent().addClass("show-uzumcu"), setTimeout(function() {
-      e.html(msgError())
-    }, 500)
   }
 }
 
@@ -602,12 +571,6 @@ $("#main-menu").menuuzumcu(), $("#main-menu .widget").addClass("show-menu"), $("
     t = e.text().trim(),
     a = e.attr("href");
   e.replaceWith('<li class="' + t + '"><a href="' + a + '" title="' + t + '" target="_blank"/></li>'), $(".author-description").append($(".author-description span li")), $(".author-description").addClass("show-icons")
-}), $("#featured .HTML .widget-content").each(function(e, t) {
-  var a = $(this),
-    r = a.text().trim(),
-    s = r.toLowerCase(),
-    o = r.split("$");
-  ajaxFeatured(a, "featured", 3, null != o[1] ? regxuzumcu(o[1]) : "", s, null != o[2] ? regxuzumcu(o[2]) : "")
 }), $(".related-content").each(function() {
   var e = $(this),
     t = e.find(".related-tag").attr("data-label");
