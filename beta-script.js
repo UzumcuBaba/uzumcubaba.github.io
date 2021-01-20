@@ -371,9 +371,6 @@ function beforeLoader() {
 function getFeedUrl(e, t, a) {
   var o = "";
   switch (a) {
-    case "recent":
-      o = "/feeds/posts/default?alt=json&max-results=" + t;
-      break;
     case "comments":
       o = "list" == e ? "/feeds/comments/default?alt=json&max-results=" + t : "/feeds/posts/default/-/" + a + "?alt=json&max-results=" + t;
       break;
@@ -450,83 +447,6 @@ function getCustomStyle(e, t, a) {
   } else o = "";
   return o;
 }
-function getAjax(e, t, a, o, r) {
-  switch (t) {
-    case "featured":
-    case "related":
-      null == o && (o = "geterror404");
-      var s = getFeedUrl(t, a, o);
-      $.ajax({
-        url: s,
-        type: "GET",
-        dataType: "json",
-        cache: !0,
-        beforeSend: function (a) {
-          var s = getCustomStyle(t, o, r);
-          switch (t) {
-            case "featured":
-              $("#page-skin-2").prepend(s),
-                e
-                  .html(beforeLoader())
-                  .parent()
-                  .addClass("id-" + t + "-" + o + " show-uzumcu");
-              break;
-            case "related":
-              e.html(beforeLoader()).parent().addClass("show-uzumcu");
-          }
-        },
-        success: function (a) {
-          var o = "";
-          switch (t) {
-            case "related":
-              o = '<div class="related-posts">';
-          }
-          var r = a.feed.entry;
-          if (null != r)
-            for (var s = 0, n = r; s < n.length; s++) {
-              var i = getPostLink(n, s),
-                l = getPostTitle(n, s, i),
-                c = getPostImage(n, s, i),
-                d = getPostMeta(getPostAuthor(n, s), getPostDate(n, s)),
-                u = (getPostLabel(n, s), "");
-              switch (t) {
-                case "related":
-                  u +=
-                    '<article class="related-item post item-' +
-                    s +
-                    '"><div class="entry-image"><a class="entry-image-link" href="' +
-                    i +
-                    '"><span class="entry-thumb" data-image="' +
-                    c +
-                    '"/></a></div><div class="entry-header"><h2 class="entry-title"><a href="' +
-                    i +
-                    '">' +
-                    l +
-                    "</a></h2>" +
-                    d[1] +
-                    "</div></article>";
-              }
-              o += u;
-            }
-          else o = msgError();
-          switch (t) {
-            case "featured":
-              (o += "</div></div>"), e.html(o);
-              break;
-            default:
-              (o += "</div>"), e.html(o);
-          }
-          e.find("span.entry-thumb").lazyuzumcu();
-        },
-        error: function () {
-          e.html(msgServerError());
-        },
-      });
-  }
-}
-function ajaxRelated(e, t, a, o, r) {
-  if (r.match("getrelated")) return getAjax(e, t, a, o);
-}
 $("#main-menu").menuuzumcu(),
   $("#main-menu .widget").addClass("show-menu"),
   $(".search-toggle").on("click", function () {
@@ -551,8 +471,8 @@ $("#main-menu").menuuzumcu(),
     e.attr("href", o), t.text(r);
   }),
   $(".avatar-image-container img").attr("src", function (e, t) {
-    return (t = t.replace("//resources.blogblog.com/img/blank.gif", "//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/s35-r/avatar.jpg")).replace(
-      "//img1.blogblog.com/img/blank.gif",
+    return (t = t.replace("//uzumcubaba.github.io/blank.gif", "//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/s35-r/avatar.jpg")).replace(
+      "//uzumcubaba.github.io/blank.gif",
       "//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/s35-r/avatar.jpg"
     );
   }),
@@ -587,11 +507,6 @@ $("#main-menu").menuuzumcu(),
       t = e.text().trim(),
       a = e.attr("href");
     e.replaceWith('<li class="' + t + '"><a href="' + a + '" title="' + t + '" target="_blank"/></li>'), $(".author-description").append($(".author-description span li")), $(".author-description").addClass("show-icons");
-  }),
-  $(".related-content").each(function () {
-    var e = $(this),
-      t = e.find(".related-tag").attr("data-label");
-    ajaxRelated(e, "related", relatedPostsNum, t, "getrelated");
   }),
   $(".blog-post-comments").each(function () {
     var e = $(this);
