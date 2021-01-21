@@ -12,8 +12,8 @@
 @font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-display: swap;src: url('https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2') format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 @font-face {
   font-family: 'FontAwesome';
-  src: url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.eot?v=4.6.0');
-  src: url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.eot?#iefix&v=4.6.0') format('embedded-opentype'), url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.woff2?v=4.6.0') format('woff2'), url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.woff?v=4.6.0') format('woff'), url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.ttf?v=4.6.0') format('truetype'), url('cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.svg?v=4.6.0#fontawesomeregular') format('svg');
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.eot?v=4.6.0');
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.eot?#iefix&v=4.6.0') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.woff2?v=4.6.0') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.woff?v=4.6.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.ttf?v=4.6.0') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/fonts/fontawesome-webfont.svg?v=4.6.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
