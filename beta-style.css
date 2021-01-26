@@ -73,9 +73,6 @@ caption,
 th {
   text-align: center;
 }
-ul > li > p {
-    margin-bottom: 0;
-}
 img {
   border: none;
   position: relative;
