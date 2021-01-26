@@ -69,10 +69,6 @@ dl,
 ul {
   list-style-position: inside;
   font-weight: 400;
-  list-style: none;
-}
-ul li {
-  list-style: none;
 }
 caption,
 th {
@@ -1702,9 +1698,6 @@ blockquote:after {
   margin: 5px 0;
   padding: 0;
   line-height: 1.5em;
-}
-.post-body ul li {
-  list-style: disc inside;
 }
 .post-body ol li {
   list-style: decimal inside;
