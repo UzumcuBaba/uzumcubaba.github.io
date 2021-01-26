@@ -59,6 +59,7 @@ u,
 ul,
 var {
   padding: 0;
+  margin: 0;
   border: 0;
   outline: 0;
   vertical-align: baseline;
@@ -67,7 +68,12 @@ var {
 }
 dl,
 ul {
+  list-style-position: inside;
   font-weight: 400;
+  list-style: none;
+}
+ul li {
+  list-style: none;
 }
 caption,
 th {
@@ -1661,6 +1667,9 @@ h6 {
 .post-body h3 {
   font-size: 20px;
 }
+p {
+  padding-bottom: 1em;
+}
 blockquote {
   background-color: rgba(155, 155, 155, 0.05);
   color: #171c24;
@@ -1697,6 +1706,9 @@ blockquote:after {
   margin: 5px 0;
   padding: 0;
   line-height: 1.5em;
+}
+.post-body ul li {
+  list-style: disc inside;
 }
 .post-body ol li {
   list-style: decimal inside;
