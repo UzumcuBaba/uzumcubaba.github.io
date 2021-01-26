@@ -1695,7 +1695,7 @@ blockquote:after {
 .widget .post-body ol {
   line-height: 1.5em;
   font-weight: 400;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 40px;
   margin: 10px 0;
 }
 .post-body li {
@@ -1704,7 +1704,7 @@ blockquote:after {
   line-height: 1.5em;
 }
 .post-body ul li {
-  list-style: disc inside;
+  list-style: disc;
 }
 .post-body ol li {
   list-style: decimal inside;
