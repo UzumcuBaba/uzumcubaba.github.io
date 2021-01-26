@@ -1706,6 +1706,9 @@ blockquote:after {
 .post-body ul li {
   list-style: disc;
 }
+.post-body ul li p {
+    margin-bottom: 0;
+}
 .post-body ol li {
   list-style: decimal inside;
 }
