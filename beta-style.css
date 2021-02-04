@@ -952,7 +952,7 @@ h6 {
   margin: 0;
   transition: all 0.25s ease;
 }
-.show-mobile-menu {
+.on-mobile-menu {
   display: none;
   position: absolute;
   top: 0;
@@ -969,12 +969,12 @@ h6 {
   padding: 0;
   margin: 0;
 }
-.show-mobile-menu:before {
+.on-mobile-menu:before {
   content: "\f0c9";
   font-family: FontAwesome;
   font-weight: 900;
 }
-.show-mobile-menu:hover {
+.on-mobile-menu:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
 }
@@ -3027,7 +3027,7 @@ p.comment-footer span:after {
   }
   #slide-menu,
   .overlay,
-  .show-mobile-menu {
+  .on-mobile-menu {
     display: block;
   }
   .nav-active .overlay {
