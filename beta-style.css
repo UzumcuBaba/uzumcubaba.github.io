@@ -609,12 +609,12 @@ h6 {
   position: relative;
   margin: 0 auto;
 }
-.main-logo-wrap {
+.brand-wrap {
   position: relative;
   float: left;
   margin: 0 20px 0 0;
 }
-.main-logo {
+.brand {
   position: relative;
   float: left;
   width: 100%;
@@ -622,29 +622,29 @@ h6 {
   padding: 13px 0;
   margin: 0;
 }
-.main-logo .main-logo-img {
+.brand .brand-img {
   float: left;
   height: 34px;
   overflow: hidden;
 }
-.main-logo img {
+.brand img {
   max-width: 100%;
   height: 34px;
   margin: 0;
 }
-.main-logo h1 {
+.brand h1 {
   font-size: 22px;
   color: #fff;
   line-height: 34px;
   margin: 0;
 }
-.main-logo h1 a {
+.brand h1 a {
   color: #fff;
 }
-.main-logo h1 a:hover {
+.brand h1 a:hover {
   color: #fff;
 }
-.main-logo #h1-tag {
+.brand #h1-tag {
   position: absolute;
   top: -9000px;
   left: -9000px;
@@ -3006,20 +3006,20 @@ p.comment-footer span:after {
   .headsection .headsection-inside {
     padding: 0;
   }
-  .main-logo-wrap {
+  .brand-wrap {
     width: 100%;
     text-align: center;
     z-index: 15;
     margin: 0;
   }
-  .main-logo .blog-title,
-  .main-logo .header-widget,
-  .main-logo .main-logo-img {
+  .brand .blog-title,
+  .brand .header-widget,
+  .brand .brand-img {
     float: none;
     display: inline-block;
     margin: 0;
   }
-  .main-logo .header-widget {
+  .brand .header-widget {
     max-width: calc(100% - 120px);
   }
   .nav-active .back-top {
