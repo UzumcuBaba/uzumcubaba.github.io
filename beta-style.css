@@ -183,7 +183,7 @@ h6 {
   background-color: #f5f6f7;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-.row {
+.section {
   width: 1078px;
 }
 #content-wrapper {
@@ -195,7 +195,7 @@ h6 {
   margin: 0;
   border-top: 0;
 }
-#content-wrapper > .container {
+#content-wrapper > .content {
   margin: 0 auto;
 }
 #main-wrapper {
@@ -213,7 +213,7 @@ h6 {
   padding: 0;
 }
 .cmm-avatar,
-.comments .avatar-image-container,
+.comments .avatar-image-content,
 .entry-image-link {
   overflow: hidden;
   background-color: rgba(155, 155, 155, 0.08);
@@ -605,7 +605,7 @@ h6 {
   margin: 0 auto;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 }
-#header-section .container {
+#header-section .content {
   position: relative;
   margin: 0 auto;
 }
@@ -1809,7 +1809,7 @@ ul.share-links {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-.about-author .avatar-container {
+.about-author .avatar-content {
   position: relative;
   float: left;
   width: 60px;
@@ -2067,7 +2067,7 @@ ul.share-links {
   transform: rotate(90deg);
   margin: 0;
 }
-.comment-thread .avatar-image-container {
+.comment-thread .avatar-image-content {
   position: absolute;
   top: 20px;
   left: 0;
@@ -2076,10 +2076,10 @@ ul.share-links {
   overflow: hidden;
   border-radius: 4px;
 }
-.toplevel-thread ol > li:first-child > .avatar-image-container {
+.toplevel-thread ol > li:first-child > .avatar-image-content {
   top: 0;
 }
-.avatar-image-container img {
+.avatar-image-content img {
   width: 100%;
   height: 100%;
 }
@@ -2765,7 +2765,7 @@ p.comment-footer span:after {
   margin: 0;
   box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.05);
 }
-#footer-wrapper .container {
+#footer-wrapper .content {
   position: relative;
   margin: 0 auto;
 }
@@ -2979,13 +2979,13 @@ p.comment-footer span:after {
     max-width: 100%;
     margin: 0;
   }
-  .row {
+  .section {
     width: 100%;
   }
-  #content-wrapper > .container,
-  #footer-wrapper .container,
+  #content-wrapper > .content,
+  #footer-wrapper .content,
   .headsection-wrap .headsection-inside,
-  .navbar-wrap .container {
+  .navbar-wrap .content {
     box-sizing: border-box;
     padding: 0 20px;
   }
@@ -3051,7 +3051,7 @@ p.comment-footer span:after {
   .navbar-wrap {
     height: 40px;
   }
-  .navbar-wrap .container {
+  .navbar-wrap .content {
     padding: 0;
   }
   #navbar-menu,
